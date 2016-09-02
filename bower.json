@@ -1,0 +1,12 @@
+{
+  "name": "landing-web",
+  "private": "true",
+  "dependencies": {
+    "angular-material": "^1.1.0",
+    "angular-material-icons": "^0.7.1",
+    "angular-ui-router": "^0.3.1",
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.7",
+    "angular-base64": "^2.0.5"
+  }
+}

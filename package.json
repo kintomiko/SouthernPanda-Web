@@ -1,0 +1,17 @@
+{
+  "name": "landing",
+  "private": true,
+  "version": "0.0.3",
+  "description": "landing",
+  "repository": "",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^0.3.13",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "shelljs": "^0.3.0"
+  }
+}
