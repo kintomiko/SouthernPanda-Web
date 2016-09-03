@@ -16,7 +16,7 @@ var paths = {
     sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'deploy']);
+gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/app.scss')
@@ -86,7 +86,7 @@ gulp.task('deploy', function() {
             hostname: 'root@45.55.250.128',
             destination: '/app/web'
         }));
-    gulp.src('template/**')
+    gulp.src('templates/**')
         .pipe(rsync({
             root: '',
             hostname: 'root@45.55.250.128',
