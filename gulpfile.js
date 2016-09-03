@@ -74,7 +74,13 @@ gulp.task('deploy', function() {
             hostname: 'root@45.55.250.128',
             destination: '/app/web'
         }));
-    gulp.src('lib/**')
+    gulp.src('bower.json')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('.bowerrc')
         .pipe(rsync({
             root: '',
             hostname: 'root@45.55.250.128',
