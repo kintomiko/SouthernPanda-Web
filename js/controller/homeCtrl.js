@@ -64,7 +64,7 @@ app.controller('HomeCtrl', function($scope, $mdBottomSheet, $mdSidenav, $mdDialo
 
     $scope.showAdd = function(ev) {
         $mdDialog.show({
-            controller: 'AddDialogCtrl',
+            controller: 'HomeCtrl',
             templateUrl: 'templates/addService.html',
             targetEvent: ev,
         })
@@ -73,6 +73,17 @@ app.controller('HomeCtrl', function($scope, $mdBottomSheet, $mdSidenav, $mdDialo
             }, function() {
                 $scope.alert = 'You cancelled the dialog.';
             });
+    };
+
+    $scope.cancelAdd = function() {
+        $mdDialog.cancel();
+    };
+    $scope.saveNew = function() {
+        var newItem = ItemService.addNew($scope.item).then(function(item){
+            return item;
+        });
+        $scope.items.push(newItem);
+        $mdDialog.hide();
     };
 
 });

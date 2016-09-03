@@ -2,7 +2,7 @@
  * Created by kinlin on 8/28/16.
  */
 
-app.factory('ItemService', function($http, SERVER_URL, ITEM_API){
+app.service('ItemService', function($http, SERVER_URL, ITEM_API){
 
     var addNew = function(item){
         var url = SERVER_URL + ITEM_API;
