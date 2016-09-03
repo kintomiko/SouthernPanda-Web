@@ -55,7 +55,7 @@ gulp.task('git-check', function(done) {
     done();
 });
 
-gulp.task('deploy',['scripts'], function() {
+gulp.task('deploy', function() {
     gulp.src('css/**')
         .pipe(rsync({
             root: '',
