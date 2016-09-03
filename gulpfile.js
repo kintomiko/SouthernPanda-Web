@@ -10,12 +10,13 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var rsync = require('gulp-rsync');
 
 var paths = {
     sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'deploy']);
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/app.scss')
@@ -52,4 +53,49 @@ gulp.task('git-check', function(done) {
         process.exit(1);
     }
     done();
+});
+
+gulp.task('deploy',['scripts'], function() {
+    gulp.src('css/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('img/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('js/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('lib/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('scss/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('template/**')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
+    gulp.src('index.html')
+        .pipe(rsync({
+            root: '',
+            hostname: 'root@45.55.250.128',
+            destination: '/app/web'
+        }));
 });
