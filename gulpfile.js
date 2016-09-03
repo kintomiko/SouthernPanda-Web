@@ -74,7 +74,7 @@ gulp.task('deploy', function() {
             hostname: 'root@45.55.250.128',
             destination: '/app/web'
         }));
-    gulp.src('lib/**')
+    gulp.src('libs/**')
         .pipe(rsync({
             root: '',
             hostname: 'root@45.55.250.128',
