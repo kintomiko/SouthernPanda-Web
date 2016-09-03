@@ -36,7 +36,7 @@ app.factory('LoginService', function($http, SERVER_URL, LOGIN_API, $base64){
                 return authData;
             }
         }, function(err){
-            this.logout()
+            service.logout()
             authData.success = false;
             authData.message = 'Incorrect Credential!';
             return authData;
