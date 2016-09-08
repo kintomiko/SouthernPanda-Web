@@ -1,0 +1,24 @@
+<form name="profileForm" layout="column">
+    <md-content layout-gt-sm="row" layout-padding>
+        <div>
+            <md-input-container>
+                <label>First Name</label>
+                <input ng-model="user.first_name">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Last Name</label>
+                <input ng-model="user.last_name">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="user.email" type="email">
+            </md-input-container>
+
+            <lf-ng-md-file-input lf-files="files" drag preview></lf-ng-md-file-input>
+
+            <md-button type="button" ng-disabled="profileForm.$invalid" class="md-raised md-primary" ng-click="submit()">Submit</md-button>
+        </div>
+    </md-content>
+</form>

@@ -28,10 +28,22 @@ app.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider, $htt
         })
 
         // Setup an abstract state for the tabs directive
+        .state('dashboard', {
+            url: '/dashboard',
+            templateUrl: 'templates/dashboard.html',
+            controller: 'DashboardCtrl'
+        })
+
         .state('home', {
             url: '/home',
             templateUrl: 'templates/home.html',
             controller: 'HomeCtrl'
+        })
+
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'templates/profile.html',
+            controller: 'ProfileCtrl'
         })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/home');

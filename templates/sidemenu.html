@@ -1,14 +1,15 @@
 <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     <md-toolbar class="md-tall md-hue-2">
         <span flex></span>
-        <div layout="column" class="md-toolbar-tools-bottom inset">
-            <user-avatar></user-avatar>
-            <span></span>
-            <div>{{profile.userInfo.first_name}} {{profile.userInfo.last_name}}</div>
-            <div>{{profile.userInfo.email}}</div>
-            <div ng-show="{{profile.userInfo === ''}}" ng-click="gotoLogin()"> Login </div>
-            <div ng-show="{{profile.userInfo !== ''}}" ng-click="logout()"> Log Out </div>
-        </div>
+        <md-list-item class="md-3-line">
+            <img class="md-avatar" ng-src="{{server_url}}/files/{{profile.userInfo.avatar_id}}" ng-click="gotoProfile()"/>
+            <div class="md-list-item-text">
+                <h3>{{profile.userInfo.first_name}} {{profile.userInfo.last_name}}</h3>
+                <h3>{{profile.userInfo.email}}</h3>
+                <p ng-show="{{profile.userInfo == ''}}" ng-click="gotoLogin()"> Login </p>
+                <p ng-hide="{{profile.userInfo == ''}}" ng-click="logout()"> Log Out </p>
+            </div>
+        </md-list-item>
     </md-toolbar>
     <md-list>
         <md-item ng-repeat="item in menu">

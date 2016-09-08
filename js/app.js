@@ -1,4 +1,4 @@
-var app = angular.module('LandingApp', ['ngMaterial', 'ngMdIcons', 'ui.router', 'base64', 'angularTrix', 'ngSanitize']);
+var app = angular.module('LandingApp', ['ngMaterial', 'ngMdIcons', 'ui.router', 'base64', 'angularTrix', 'ngSanitize', 'lfNgMdFileInput']);
 
 app.directive('userAvatar', function() {
     return {

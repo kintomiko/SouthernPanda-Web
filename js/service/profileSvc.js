@@ -2,7 +2,7 @@
  * Created by kinlin on 8/27/16.
  */
 
-app.service("ProfileService", function(){
+app.service("ProfileService", function($http, SERVER_URL){
     this.userInfo = !_.isUndefined(window.localStorage.userInfo) && !_.isEmpty(window.localStorage.userInfo) ? JSON.parse(window.localStorage.userInfo) : '';
     this.userCred = !_.isUndefined(window.localStorage.userCred) && !_.isEmpty(window.localStorage.userCred) ? JSON.parse(window.localStorage.userCred) : '';
 
@@ -14,5 +14,10 @@ app.service("ProfileService", function(){
     this.setUserCred = function(cred){
         this.userCred = cred;
         window.localStorage.userCred = JSON.stringify(cred);
+    }
+
+    this.update = function(user){
+        this.setUserInfo(user);
+        $http.put(SERVER_URL+"/user/"+user.id, user);
     }
 })
